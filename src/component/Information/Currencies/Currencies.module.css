@@ -1,0 +1,30 @@
+.container{
+    
+    
+}
+.form{
+    margin:0 auto;
+    width:1200px;
+    background-color: white;
+    
+}
+
+.formContainer{
+    padding:50px 0px 50px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.headContainer{
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+}
+.nameValuta{
+    width: 200px;
+    text-align: center
+}
+.nameUa{
+    width: 200px;
+    text-align: center
+}

@@ -1,0 +1,47 @@
+.container{
+    
+    
+}
+.form{
+    margin:0 auto;
+    width:1200px;
+    background-color: white;
+    
+}
+
+.formContainer{
+    padding-top:50px;
+}
+.bodyContainer{
+    display: flex;
+    justify-content: center;
+}
+.choice{
+    margin-left: 90px;
+}
+
+.buttonchoice{
+    padding: 50px 0px 80px 0px;
+    
+}
+/* -------BUTTON----------- */
+button{
+    width: 200px;
+    height: 50px;
+    background-color:rgba(21, 226, 41, 1);
+    font-size: 24px;
+    font-weight: 300;
+}
+/* ----------TEXTAREA----------- */
+textarea{
+    width: 200px;
+    height:50px;
+}
+
+
+select{
+    position: relative;
+    width: 205px;
+    height:50px;
+    /* margin: 0 auto; */
+}

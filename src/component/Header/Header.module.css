@@ -1,0 +1,23 @@
+.maincontainer{
+    background-color: white;
+}
+.container {
+    display: flex;
+    margin:0 auto;
+    width: 1200px;
+    justify-content: left;
+}
+.foto{
+    
+    max-width: 200px;
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+   
+}
+h1{
+    font-weight: 500;
+}
