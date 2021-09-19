@@ -4,7 +4,7 @@
 }
 .form{
     margin:0 auto;
-    width:1200px;
+   max-width:1200px;
     background-color: white;
     
 }
@@ -34,14 +34,31 @@ button{
 }
 /* ----------TEXTAREA----------- */
 textarea{
-    width: 200px;
+    max-width: 200px;
     height:50px;
 }
 
 
 select{
     position: relative;
-    width: 205px;
+   max-width: 205px;
     height:50px;
     /* margin: 0 auto; */
+}
+
+@media only screen and (max-width : 550px) {
+    .bodyContainer{
+        flex-direction: column;
+     }
+     .selected{
+         justify-content: center;
+         text-align: center;
+     }
+     .choice{
+        margin-left: 0px;
+    }
+    .text{
+        justify-content: center;
+         text-align: center;
+    }
 }

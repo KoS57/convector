@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 
 
-const Navig = () => {
+const Navig = (props) => {
     return (
         <div className={st.mainContainer}>
             <div className={st.container}>
@@ -15,7 +15,7 @@ const Navig = () => {
                     </ul>
                 </nav>
             </div>
-            
+
         </div>
     )
 }

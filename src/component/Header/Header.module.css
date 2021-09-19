@@ -4,13 +4,17 @@
 .container {
     display: flex;
     margin:0 auto;
-    width: 1200px;
+   max-width: 1200px;
     justify-content: left;
 }
 .foto{
     
     max-width: 200px;
+    
 }
+img {
+    max-width: 100%;
+  }
 
 .text{
     display: flex;
@@ -20,4 +24,5 @@
 }
 h1{
     font-weight: 500;
+    font-size:  calc(18px + (36 - 18) * ((100vw - 320px) / (1200 - 320)));
 }

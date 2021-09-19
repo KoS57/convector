@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import st from './Currencies.module.css'
 import Valuta from '../Valuta/Valuta'
 
 
-const BASE_URL = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json'
 
 
 
 const Currencies = (props) => {
 
-    const [currencyOption, setCurrencyOption] = useState([]);
-    const valut = currencyOption.filter(person => {
+    const valut = props.result.filter(person => {
         if (person.cc === "USD") {
             return true
         } else if (person.cc === "EUR") {
@@ -24,15 +22,7 @@ const Currencies = (props) => {
     }
     )
 
-    useEffect(() => {
-        fetch(BASE_URL)
-            .then(res => res.json())
-            .then(data => {
 
-
-                setCurrencyOption(data)
-            })
-    }, []);
 
 
 
@@ -45,10 +35,10 @@ const Currencies = (props) => {
                 <div className={st.form}>
                     <div className={st.formContainer}>
                         <div className={st.headContainer}>
-                           <div>
-                           <div className={st.nameValuta}>Valuta</div>
-                           </div>
-                           
+                            <div>
+                                <div className={st.nameValuta}>Valuta</div>
+                            </div>
+
                             <div className={st.nameUa}>UA</div>
                         </div>
 
