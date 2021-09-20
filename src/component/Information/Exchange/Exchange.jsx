@@ -84,7 +84,7 @@ const Exchange = (props) => {
                         <div >
                             <div>
                                 <div className={st.text}>
-                                    <textarea type="number" name="" id="" cols="30" rows="10" onChange={updateText} ></textarea>
+                                    <textarea type="number" name="" id="" cols="30" rows="10" onChange={updateText} value={props.newMessText} ></textarea>
                                 </div>
                             </div>
                         </div>

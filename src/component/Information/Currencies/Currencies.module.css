@@ -1,7 +1,4 @@
-.container{
-    
-    
-}
+
 .form{
     margin:0 auto;
     max-width:1200px;
@@ -19,7 +16,7 @@
     display: flex;
     justify-content: center;
     font-size: 22px;
-}
+} 
 .nameValuta{
     max-width: 200px;
     text-align: center;
@@ -27,6 +24,6 @@
 .nameUa{
     max-width: 200px;
     text-align: center;
-    padding-left: 120px;
+    padding-left: 150px;
 
 }

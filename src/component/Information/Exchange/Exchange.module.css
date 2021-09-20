@@ -53,6 +53,7 @@ select{
      .selected{
          justify-content: center;
          text-align: center;
+         padding-top: 10px;
      }
      .choice{
         margin-left: 0px;
@@ -60,5 +61,6 @@ select{
     .text{
         justify-content: center;
          text-align: center;
+         padding-top: 10px;
     }
 }
