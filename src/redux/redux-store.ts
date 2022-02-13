@@ -11,6 +11,7 @@ let reducer = combineReducers({
 
 let store = createStore(reducer,applyMiddleware(thunkMiddlewear))
 
-window.store = store
 
+
+export type rootState= ReturnType<typeof reducer>
 export default store

@@ -1,47 +1,69 @@
-import React from 'react'
+import React, {FC, useEffect, useState} from 'react'
+import { useDispatch, useSelector} from 'react-redux'
 import st from './Exchange.module.css'
+import {actionUpdateMessText, actionCurrentCurrency, actionChangeCurrency, actionResultCurrency, getCourse} from '../../../redux/number-reducer'
+import {currentTypeSelector} from '../../hooks/cyrrentTypeSelector'
+
+
+const Exchange: FC = () => {
+
+
+    
+    const dispatch=useDispatch()
+     useEffect(() => {
+           dispatch(getCourse()) 
+    }, []);
+
+const {changeCurrency,newMessText,currentCurrency,result,resultCurrency}=currentTypeSelector(state=>state.resultConver)
 
 
 
-const Exchange = (props) => {
 
 
-    let updateText = (event) => {
-        let body = event.target.value
-        props.onupdateText(body)
+    const updateText = (event:any) => {
+        let body:number = event.currentTarget.value
+        console.log(typeof body)
+       dispatch(actionUpdateMessText(body))
+
     }
-    let onCurentValut = (valut) => {
-        let change = props.result.filter(v => v.txt === valut)
-        props.onCurrentCurrency(change[0].rate)
+
+    let onCurentValut = (valut: string) => {
+        let change:any = result.filter(v => v.txt === valut)
+        dispatch(actionCurrentCurrency(change[0].rate))
+
     }
 
-    let onChangeValut = (valut) => {
-        let change = props.result.filter(v => v.txt === valut)
-        props.onChangeCurrency(change[0].rate)
+    let onChangeValut = (valut:string) => {
+        let change:any = result.filter(v => v.txt === valut)
+        dispatch(actionChangeCurrency(change[0].rate))
+
     }
 
     const conv = () => {
-        let a
-        let b
+        let a: number|number[]
+        let b:number|number[]
+        let f:number|number[] 
+        let c:number|number[]
 
-        if (props.currentCurrency.length == 0) {
-            a = props.result[0].rate
+        if (currentCurrency.length == 0) {
+            a = result[0].rate
         }
         else {
-            a = props.currentCurrency;
+            a = currentCurrency;
         }
-        if (props.changeCurrency.length == 0) {
-            b = props.result[0].rate
+        if (changeCurrency.length == 0) {
+            b = result[0].rate
         } else {
-            b = props.changeCurrency;
+            b = changeCurrency;
         }
-        let c = props.newMessText
-        let f = (a / b) * c;
-        let val = (f.toFixed(1))
-        return props.onResultCurrency(val);
+         c= newMessText
+        
+        f= (+a / +b) * +c
+        
+        let val:any = (f.toFixed(1))
+        return dispatch(actionResultCurrency(val));
+
     }
-
-
 
 
 
@@ -57,7 +79,7 @@ const Exchange = (props) => {
                             <div>
                                 <form className={st.selected}>
                                     <select id="country" name="country">
-                                        {props.result.map(n => {
+                                        {result.map(n => {
                                             return <option value={n.txt} onClick={() => { onCurentValut(n.txt) }}>
                                                 {n.txt}</option>
                                         })}
@@ -69,7 +91,7 @@ const Exchange = (props) => {
                             <div>
                                 <form className={st.selected}>
                                     <select id="country" name="country">
-                                        {props.result.map(n => {
+                                        {result.map(n => {
                                             return <option value={n.txt} onClick={() => { onChangeValut(n.txt) }}> {n.txt}</option>
                                         })}
                                     </select>
@@ -84,14 +106,16 @@ const Exchange = (props) => {
                         <div >
                             <div>
                                 <div className={st.text}>
-                                    <textarea type="number" name="" id="" cols="30" rows="10" onChange={updateText} value={props.newMessText} ></textarea>
+                                    <textarea name="" id="" cols={30} rows={10} onChange={updateText} value={newMessText}/>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div className={st.choice}>
                             <div>
                                 <div className={st.text}>
-                                    <textarea name="" id="" cols="30" rows="10" value={props.resultCurrency}></textarea>
+                                    <textarea cols={30} rows={10}  value={resultCurrency} ></textarea>
+                                    
                                 </div>
                             </div>
                         </div>

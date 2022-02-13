@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 
 
-const Navig = (props) => {
+const Navig = () => {
     return (
         <div className={st.mainContainer}>
             <div className={st.container}>

@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { FC } from 'react'
 import st from './Valuta.module.css'
 
+interface ValutProps{
+    name:string,
+    valute:number
+}
 
 
-
-const Valute = (props) => {
+const Valute:FC <ValutProps>= ({name,valute}) => {
     return (
         <div>
             <div className={st.formContainer}>
                 <div className={st.bodyContainer}>
                     <div className={st.choice}> 
-                        {props.name}
+                        {name}
                     </div>
                     <div className={st.choice}> 
-                        {props.valute}
+                        {valute}
                     </div>
                 </div>
             </div>
